@@ -1,0 +1,118 @@
+html,body {
+  background: #007bff;
+  background: linear-gradient(to right, #e3e8ef, #a1a8af);
+  width: 100%;
+  height:100%;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+.navbar-brand mr-4 {
+  margin-left: -2000px
+}
+
+/*in navbar*/
+.bg-steel {
+  background-color: #5f788a;
+}
+
+/*in navbar*/
+.site-header .navbar-nav .nav-link {
+  margin-left: 200px
+  color: #cbd5db;
+}
+
+/*in navbar*/
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+/*in navbar*/
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+/*in navbar*/
+.btn-primary {
+  background-color:#5f788a;
+  outline-color: #5f788a;
+  border-color: #5f788a;
+}
+
+/*in navbar*/
+.site-header {
+  margin-top: 100px;
+}
+
+/*form*/
+#form {
+  background-color: None;
+  margin-right: 1200px;
+  margin-left: 200px;
+  padding: 10px 20px;
+  border: None;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+/*inside form*/
+#dateid {
+  display: none;
+}
+
+/*inside form*/
+#runid {
+  display: none;
+}
+
+/*inside form*/
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+  float:left;
+}
+
+/*inside form*/
+.left {
+  width: 200px; 
+  text-align: center; 
+  line-height:30px;
+  padding:3px 0;
+  float:left;
+}
+
+/*under form*/
+#iframe {
+  margin-right: 1200px;
+  margin-left: 190px;
+  padding: 10px 20px;
+  display: none;
+}
+
+/*under form*/
+#iframeforrun {
+  display: none;
+  border-style: outset;
+}
+
+/*under form*/
+#iframefordate {
+  display: none;
+  border-style: outset;
+}
+
+#upload_form {
+  width: 800px; 
+  margin-left: 200px;
+  margin-top: 100px;
+}
+
+#fail_message {
+  color:red;
+}

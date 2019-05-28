@@ -1,0 +1,192 @@
+{% extends "layout.html" %}
+  {% block content %}
+
+  <div class = 'row'>
+  <form action="" method="post">
+  <div class='container'>
+  <div class = 'row'>
+  <div class="form-group mr-4">
+                     <fieldset> 
+                      <legend>Make Your Own Plot</legend>
+                        <input id="all_runs" name="radio" type="radio" onclick='HideFunction()'value="all">
+                        <label for="all_runs">All Runs</label>
+                        <input id="date" name="radio" type="radio" onclick='DateHideFunction()' value='sp_date'>
+                        <label for="date">Specific Date</label>
+                        <input id="run" name="radio" type="radio" onclick='RunHideFunction()' value='sp_run'>
+                        <label for="run">Specific Run</label>
+                  </fieldset>
+                  <div id='dateid'>
+                      <div> First Date
+                      <input type="date" id = 'firstdate' name='firstdate' placeholder="First Date" ></input></div>
+                      <div>Last Date
+                      <input type="date" id = 'secondate' name='secondate' placeholder="last Date" ></input></div>
+                  </div> <br> <br>
+                  <div id='runid'>
+              <input type="number" min=1 max = 100 id = 'firstrun' name='firstrun' placeholder="RUN" >First Run</input>
+              <input type="number" min=1 max = 100 id = 'secondrun' name='secondrun' placeholder="RUN" >Last Run</input><br><br>
+                  </div>
+              <input id="t_f_m" name="radio_obj" type="radio" value="total_free_memory"> 
+                        <label for="t_f_m">Total Free Memory</label>
+              <input id="m_u" name="radio_obj" type="radio" value="mem_usage">
+                        <label for="m_u">Mem Usage</label>
+              <input id="c_u" name="radio_obj" type="radio" value="cpu_usage">
+                        <label for="c_u">Cpu Usage</label>
+              <input id="vm_u" name="radio_obj" type="radio" value="vmem_usage">
+                        <label for="vm_u">Vmem Usage</label>
+              <input id="err" name="radio_obj" type="radio" value="errors">
+                        <label for="err">Errors</label><br>
+              <input id="allvalues" name="radio_all_avg" type="radio" value="all">
+                        <label for="allvalues">All Values</label>
+              <input id="average" name="radio_all_avg" type="radio" value="avg">
+                        <label for="average">Average Values</label><br>
+          <input id="submit" type="button" name="submit" value="Submit" onClick='submitHandler()'>
+          <input type="reset" value="Reset" onClick="window.location.reload()">
+        </div>
+    </div>
+
+         <div class = "col-md-8">
+               <div class="embed-responsive embed-responsive-4by3" id='iframeforrun'>
+                   <iframe class="embed-responsive-item" src = '/available_runs.html'></iframe>
+               </div>
+         </div>
+        <div class = "col-md-8">
+               <div class="embed-responsive embed-responsive-4by3" id='iframefordate'>
+                   <iframe class="embed-responsive-item" src = '/available_dates.html'></iframe>
+               </div>
+         </div>
+       </div>
+
+  </div>
+        <div class = 'row'>
+          <div class col-md-8>
+              <div class="embed-responsive embed-responsive-21by9" id='iframe'>
+                  <iframe class="embed-responsive-item" id="serviceFrameSend"></iframe>
+              </div>
+            </div>
+          </div>
+
+
+  {% endblock content %}
+  {% block javascript %}
+    <script>
+    $(document).ready(function(){
+        // click on button submit
+        $("#submit").on('click', function(){
+            // send ajax
+            $.ajax({
+                url: '/receiver', // url where to submit the request
+                type : "POST", // type of action POST || GET
+                dataType : 'json', // data type
+                data : $("form").serialize(), // post data || get data
+                success : function(result) {
+                    // you can see the result from the console
+                    // tab of the developer tools
+                    console.log(result);
+                    $("#serviceFrameSend").attr('src','/plot.html');
+                },
+            })
+        });
+    });
+
+    </script>
+
+
+    <script>
+        function DateHideFunction() {
+          var x = document.getElementById("dateid");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "block";
+          }
+          var y = document.getElementById("iframefordate");
+          if (y.style.display === "none") {
+            y.style.display = "block";
+          } else {
+            y.style.display = "block";
+          }
+          var z = document.getElementById("runid");
+          z.style.display = "none";
+          var e = document.getElementById("iframeforrun");
+          e.style.display = "none";
+        }
+
+        function RunHideFunction() {
+          var x = document.getElementById("runid");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "block";
+          }
+          var y = document.getElementById("iframeforrun");
+          if (y.style.display === "none") {
+            y.style.display = "block";
+          } else {
+            y.style.display = "block";
+          }
+          var z = document.getElementById("dateid");
+          z.style.display = "none";
+          var e = document.getElementById("iframefordate");
+          e.style.display = "none";
+        }
+        function HideFunction () {
+          var x = document.getElementById("dateid");
+          var y = document.getElementById("iframefordate");
+          var z = document.getElementById("runid");
+          var e = document.getElementById("iframeforrun");
+          x.style.display = "none";
+          y.style.display = "none";
+          z.style.display = "none";
+          e.style.display = "none";
+        }
+        function IframeFunction() {
+          var x = document.getElementById('iframe');
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "block";
+          }
+        }
+
+        function submitHandler() {
+          IframeFunction();
+          exithandler();
+          HideFunction();
+}
+
+    </script>
+
+    <script type="text/javascript">
+      function exithandler(){
+      //radio
+      var all_runs = document.getElementById('all_runs').checked
+      var date = document.getElementById('date').checked
+      var run = document.getElementById('run').checked
+      //radio_obj
+      var t_f_m = document.getElementById('t_f_m').checked
+      var m_u = document.getElementById('m_u').checked
+      var c_u = document.getElementById('c_u').checked
+      var vm_u = document.getElementById('vm_u').checked
+      var err = document.getElementById('err').checked
+      //radio_all_avg
+      var allvalues = document.getElementById('allvalues').checked
+      var average = document.getElementById('average').checked
+
+      //first argument
+      if (all_runs == false && date  == false && run  == false) {
+        alert('Bad Input');
+        window.location.reload();
+      }
+      //second argument
+      if(t_f_m == false && m_u == false && c_u == false && vm_u == false && err == false ) {
+        alert('Bad Input');
+        window.location.reload();
+      }
+      //third argument
+      if (allvalues == false && average == false) {
+        alert('Bad Input');
+        window.location.reload();
+      }
+      }
+    </script>
+  {% endblock javascript %}

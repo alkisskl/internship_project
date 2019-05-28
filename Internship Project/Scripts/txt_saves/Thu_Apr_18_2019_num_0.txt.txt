@@ -1,0 +1,15 @@
+-duration_s 300 -tps 3000 -functionality mixed -redisstress 5 -error_tolerance 90 -stats_tolerance 80
+Historical STATS TOTAL transactions:		891	Total errors:			468	Total delay time:		4.678996324539185	Average DELAY per transaction:	5.3	Average TPS:			29.7
+Historical STATS table_total_free_mem['427', '428', '429', '431', '431', '433', '433', '434', '435', '435', '437', '437', '438', '439', '440', '441', '442', '442', '443', '444', '446', '446', '446', '448', '449', '449', '450', '451', '452', '453']
+Historical STATS table_cpu_usage['0.3', '0.3', '0.3', '0.3', '0.3', '0.3', '0.3', '0.3', '0.3', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4', '0.4']
+Historical STATS table_mem_usage['6', '6', '6', '6', '6', '6.1', '6.1', '6.1', '6.1', '6.1', '6.1', '6.1', '6.1', '6.1', '6.1', '6.1', '6.2', '6.2', '6.2', '6.2', '6.2', '6.2', '6.2', '6.2', '6.2', '6.2', '6.3', '6.3', '6.3', '6.3']
+Historical STATS table_vmem_usage['60538832', '60776516', '61022396', '61251884', '61489568', '61743644', '61964936', '62227208', '62456696', '62702576', '62948456', '63177944', '63423824', '63677900', '63923780', '64112288', '64358168', '64587656', '64841732', '65087612', '65333492', '65579372', '65825252', '66071132', '66300620', '66562892', '66816968', '67054652', '67308728', '67538216']
+Historical STATS ERRORS[5, 15, 19, 21, 15, 14, 14, 17, 11, 16, 17, 8, 18, 14, 11, 18, 13, 16, 12, 19, 15, 15, 13, 16, 15, 14, 13, 16, 21, 18]
+Historical STATS  Times['Thu Apr 18 07:42:21 2019', 'Thu Apr 18 07:42:22 2019', 'Thu Apr 18 07:42:23 2019', 'Thu Apr 18 07:42:24 2019', 'Thu Apr 18 07:42:25 2019', 'Thu Apr 18 07:42:26 2019', 'Thu Apr 18 07:42:27 2019', 'Thu Apr 18 07:42:28 2019', 'Thu Apr 18 07:42:29 2019', 'Thu Apr 18 07:42:30 2019', 'Thu Apr 18 07:42:31 2019', 'Thu Apr 18 07:42:32 2019', 'Thu Apr 18 07:42:33 2019', 'Thu Apr 18 07:42:34 2019', 'Thu Apr 18 07:42:35 2019', 'Thu Apr 18 07:42:36 2019', 'Thu Apr 18 07:42:37 2019', 'Thu Apr 18 07:42:38 2019', 'Thu Apr 18 07:42:39 2019', 'Thu Apr 18 07:42:40 2019', 'Thu Apr 18 07:42:41 2019', 'Thu Apr 18 07:42:42 2019', 'Thu Apr 18 07:42:43 2019', 'Thu Apr 18 07:42:44 2019', 'Thu Apr 18 07:42:45 2019', 'Thu Apr 18 07:42:46 2019', 'Thu Apr 18 07:42:47 2019', 'Thu Apr 18 07:42:48 2019', 'Thu Apr 18 07:42:49 2019', 'Thu Apr 18 07:42:50 2019']
+TEST RESULT SUCCESS TOTAL ERRORS. Error count is smaller than  90.0 % of total transactions.
+TEST RESULT SUCCESS AVERAGE DELAY. The average delay per transaction is smaller than 100ms.
+TEST RESULT SUCCESS AVERAGE TPS. The average TPS is at least  80.0 % of the configured.
+TEST RESULT SUCCESS FREE MEMORY. The total free memory didn't varied during the excecution
+TEST RESULT SUCCESS CPU USAGE. The cpu usage didn't varied during the excecution
+TEST RESULT SUCCESS MEMORY USAGE. The memory percent usage didn't varied during the excecution
+TEST RESULT SUCCESS VIRTUAL MEMORY USAGE. The virtual memory didn't varied during the excecution

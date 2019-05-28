@@ -1,0 +1,26 @@
+{
+	"store_and_convert": {
+		"mongoclient" : "mongodb://localhost:27017/",
+		"basic_db": "mydatabase",
+		"back_up_db": "mydatabase_bu",
+		"txt_uuid":"2f67c430-235a-4d37-91d8-5fa4357b53e8",
+		"path_txt_saves":"/root/project/txt_saves/",
+		"path_to_project":"/root/project/"
+		},
+
+	"myflask": {
+		"host_address": "0.0.0.0",
+		"debug": "False",
+		"testing": "False",
+		"templates": "True",
+		"secret_key": "5d464d9094d02bf5610473e36f036ace",
+		"uploads": "/root/project",
+		"allowed_files": "['TXT','DOC']"
+		},
+
+	"transfer": {
+		"path_to_outputs": "/var/tmp/output/"
+	}
+
+
+}

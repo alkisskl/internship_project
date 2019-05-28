@@ -1,0 +1,36 @@
+{% extends "layout_for_not_logged_in.html" %}
+	{% block content %}
+		<body>
+			<div class="container">
+			<div class="row">
+				<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+				<div class="card card-signin my-5">
+				<div class="card-body">
+					<h5 class="card-title text-center">Sign Up</h5>
+
+					<form class="form-signin" method=POST action="{{ url_for('register') }}">
+						<div class="form-label-group">
+							<input type="email" name = 'user_email' id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+						</div>
+						<div class="form-label-group">
+							<input type="text" name = 'username' id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+						</div>
+						<div class="form-label-group">
+							<input type="password" name = 'password' id="inputPassword" class="form-control" placeholder="Password" required>
+						</div>
+
+					<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+					</form>
+					<div class="alert alert-light" role="alert" id='fail_registration_message'>
+						<div id='fail_message'> {{ fail_message }} </div>
+					</div>
+					</div>
+					</div>
+						<div>
+							If you have an account <a href="{{ url_for('home') }}"> Sign in here</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</body>
+	{% endblock content %}

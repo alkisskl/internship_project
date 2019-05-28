@@ -1,0 +1,26 @@
+{
+	"store_and_convert": {
+		"mongoclient" : "MONGO LOCALHOST",
+		"basic_db": "DATABASE NAME",
+		"back_up_db": "BACK UP DATABASE NAME",
+		"txt_uuid":"UNIQUE NAME FOR TXT FILE",
+		"path_txt_saves":"PATH FOR FOLDER FOR SAVING VALID TXT",
+		"path_to_project":"PATH FOR PROJECT"
+		},
+
+	"myflask": {
+		"host_address": "HOST ADDRESS",
+		"debug": "True OR False FOR DEBUGER",
+		"testing": "True OR False FOR TESTING",
+		"templates": "True OR False FOR TEMPLATES AUTO RELOAD",
+		"secret_key": "RANDOM SECRET KEY",
+		"uploads": "PATH FOR UPLOADING",
+		"allowed_files": "['VALID FILE TYPES']"
+		},
+
+	"transfer": {
+		"path_to_outputs": "PATH FOR THE OUTPUTS"
+	}
+
+
+}

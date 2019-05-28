@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+	{% block content %}
+	<div class = 'row'>
+		<form action = "/upload" method="Post" enctype="multipart/form-data" id = 'upload_forma'>
+			<div class ="form-group" id='upload_form'>
+			<div class="input-group mb-3">
+				<div class="custom-file">
+					<input type="file" class="custom-file-input" id="inputGroupFile02" name='file'> 
+					<label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+				</div>
+				<button type="submit" class="btn btn-primary">Upload File</button>
+			</div>
+			</div>
+		</form>
+	</div>
+
+	{% endblock content %}

@@ -1,0 +1,19 @@
+{% block content %}
+	<head>
+	<style>
+	div {
+		color: #2b2b30; 
+		font-size: 20px;
+		}
+	</style>
+	</head>
+
+	<body>
+		<div id='available'>
+			<h1>Available Runs:</h1>
+			{% for item in dataruns %}
+				<li>Run: {{ item }}</li>
+			{% endfor %}
+		</div>
+	</body>
+{% endblock content %}
